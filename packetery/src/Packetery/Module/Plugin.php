@@ -220,7 +220,8 @@ class Plugin {
 			'admin_notices',
 			function () {
 				$this->message_manager->render();
-			}
+			},
+			-9998
 		);
 		add_action( 'init', array( $this, 'init' ) );
 
@@ -278,7 +279,7 @@ class Plugin {
 			3
 		);
 		// Print packets export result.
-		add_action( 'admin_notices', [ $this->orderBulkActions, 'renderPacketsExportResult' ] );
+		add_action( 'admin_notices', [ $this->orderBulkActions, 'renderPacketsExportResult' ], -9998 );
 
 		add_action( 'admin_init', [ $this->labelPrint, 'outputLabelsPdf' ] );
 
